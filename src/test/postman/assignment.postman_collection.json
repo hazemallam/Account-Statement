@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "87abbe6c-01d4-4303-a925-ae91525b8c97",
+		"name": "assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24179766"
+	},
+	"item": [
+		{
+			"name": "admin request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/account/user/statement/3?fromDate=24.10.2020&toDate=24.01.2021&fromAmount=350.793682741483&toAmount=564.982890505824",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"user",
+						"statement",
+						"3"
+					],
+					"query": [
+						{
+							"key": "fromDate",
+							"value": "24.10.2020"
+						},
+						{
+							"key": "toDate",
+							"value": "24.01.2021"
+						},
+						{
+							"key": "fromAmount",
+							"value": "350.793682741483"
+						},
+						{
+							"key": "toAmount",
+							"value": "564.982890505824"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin request with amount filter",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/account/admin/statement/3?fromAmount=350.793682741483&toAmount=564.982890505824",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"admin",
+						"statement",
+						"3"
+					],
+					"query": [
+						{
+							"key": "fromAmount",
+							"value": "350.793682741483"
+						},
+						{
+							"key": "toAmount",
+							"value": "564.982890505824"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invalid param sent",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/account/user/statement/d?fromDate=24.10.2020&toDate=24.01.2021&fromAmount=350.793682741483&toAmount=564.982890505824",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"user",
+						"statement",
+						"d"
+					],
+					"query": [
+						{
+							"key": "fromDate",
+							"value": "24.10.2020"
+						},
+						{
+							"key": "toDate",
+							"value": "24.01.2021"
+						},
+						{
+							"key": "fromAmount",
+							"value": "350.793682741483"
+						},
+						{
+							"key": "toAmount",
+							"value": "564.982890505824"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/account/user/statement/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"user",
+						"statement",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user cannot access admin urls",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/account/admin/statement/3?fromDate=24.10.2020&toDate=24.01.2021&fromAmount=350.793682741483&toAmount=564.982890505824",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"admin",
+						"statement",
+						"3"
+					],
+					"query": [
+						{
+							"key": "fromDate",
+							"value": "24.10.2020"
+						},
+						{
+							"key": "toDate",
+							"value": "24.01.2021"
+						},
+						{
+							"key": "fromAmount",
+							"value": "350.793682741483"
+						},
+						{
+							"key": "toAmount",
+							"value": "564.982890505824"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
